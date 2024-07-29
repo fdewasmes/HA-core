@@ -1,0 +1,74 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "host": "[%key:common::config_flow::data::host%]",
+          "username": "[%key:common::config_flow::data::username%]",
+          "password": "[%key:common::config_flow::data::password%]"
+        }
+      },
+      "reconfigure": {
+        "data": {
+          "host": "Host",
+          "password": "Password",
+          "username": "Username"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
+      "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
+      "unknown": "[%key:common::config_flow::error::unknown%]"
+    },
+    "abort": {
+      "already_configured": "[%key:common::config_flow::abort::already_configured_device%]",
+      "reconfigure_successful": "Reconfiguration successful"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Scan Interval (seconds)"
+        },
+        "description": "Amend your options.",
+        "title": "Example Integration Options"
+      }
+    }
+  },
+  "selector": {
+    "mqtt_topic": {
+      "options": {
+        "status": "status",
+        "config": "config"
+      }
+    }
+  },
+  "services": {
+    "cloud_mqtt_ping_service": {
+      "name": "MQTT ping service",
+      "description": "sends a ping message to AWS IoT thing",
+      "fields": {
+        "time_period": {
+          "name": "Time Period",
+          "description": "Time to hold until."
+        }
+      }
+    },
+    "cloud_send_mqtt_message_service": {
+      "name": "send a MQTT message",
+      "description": "sends a message to AWS IoT thing",
+      "fields": {
+        "payload": {
+          "name": "Payload",
+          "description": "Payload of the message."
+        },
+        "topic": {
+          "name": "Topic",
+          "description": "topic to which you want the content to be sent. status will send to status topic (/c/p/[serial_number]/status). config will send to $aws/things/[serial_number]/shadow/name/config/get."
+        }
+      }
+    }
+  }
+}

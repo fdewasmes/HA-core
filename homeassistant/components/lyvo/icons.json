@@ -1,0 +1,6 @@
+{
+  "services": {
+    "cloud_mqtt_ping_service": "mdi:cloud",
+    "cloud_send_mqtt_message_service": "mdi:cloud-upload"
+  }
+}

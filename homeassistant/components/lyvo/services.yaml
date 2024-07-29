@@ -1,0 +1,20 @@
+cloud_mqtt_ping_service:
+cloud_send_mqtt_message_service:
+  fields:
+    payload:
+      required: true
+      example: "{key:value}"
+      selector:
+        text:
+    topic:
+      # topic to which you want the content to be sent.
+      #  status will send to status topic (/c/p/<serial number>/status)
+      #  config will send to $aws/things/<serial number>/shadow/name/config/get
+      required: true
+      selector:
+        select:
+          translation_key: "mqtt_topic"
+          sort: true
+          options:
+            - config
+            - status

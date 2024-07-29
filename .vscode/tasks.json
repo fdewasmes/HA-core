@@ -14,6 +14,18 @@
       "dependsOn": ["Compile English translations"]
     },
     {
+      "label": "Run Home Assistant Core (custom)",
+      "type": "shell",
+      "command": "uv pip uninstall clesyde-cloud-lib && uv pip install -e ./config/custom_libraries/clesyde-cloud-lib && hass -c ./config",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": [],
+      "dependsOn": ["Compile English translations"]
+    },
+    {
       "label": "Pytest",
       "type": "shell",
       "command": "python3 -m pytest --timeout=10 tests",

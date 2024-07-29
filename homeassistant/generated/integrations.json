@@ -919,6 +919,17 @@
       "config_flow": false,
       "iot_class": "local_polling"
     },
+    "clesyde": {
+      "name": "Clesyde",
+      "integrations": {
+        "lyvo": {
+          "integration_type": "device",
+          "config_flow": false,
+          "iot_class": "local_polling",
+          "name": "Lyvo"
+        }
+      }
+    },
     "clickatell": {
       "name": "Clickatell",
       "integration_type": "hub",

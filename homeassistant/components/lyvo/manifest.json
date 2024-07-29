@@ -1,0 +1,14 @@
+{
+  "domain": "lyvo",
+  "name": "Lyvo",
+  "codeowners": ["@fdewasmes"],
+  "dependencies": [],
+  "documentation": "https://www.home-assistant.io/integrations/clesyde_cloud",
+  "homekit": {},
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "requirements": ["clesyde-cloud-lib==0.1.0"],
+  "single_config_entry": true,
+  "ssdp": [],
+  "zeroconf": []
+}

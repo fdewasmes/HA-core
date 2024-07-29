@@ -2,11 +2,15 @@
   "name": "Home Assistant Dev",
   "context": "..",
   "dockerFile": "../Dockerfile.dev",
-  "postCreateCommand": "script/setup",
+  "postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && script/setup",
   "postStartCommand": "script/bootstrap",
   "containerEnv": {
     "PYTHONASYNCIODEBUG": "1"
   },
+  "mounts": [
+    //Custom library
+    "source=${localEnv:HOME}/Documents/clesyde/cloud-lib,target=${containerWorkspaceFolder}/config/custom_libraries/clesyde-cloud-lib,type=bind"
+  ],
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },

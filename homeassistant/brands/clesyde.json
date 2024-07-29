@@ -1,0 +1,6 @@
+{
+  "domain": "clesyde",
+  "name": "Clesyde",
+  "integrations": ["lyvo"],
+  "iot_standards": []
+}

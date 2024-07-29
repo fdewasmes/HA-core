@@ -657,6 +657,9 @@ ciscomobilityexpress==0.3.9
 # homeassistant.components.cppm_tracker
 clearpasspy==1.0.2
 
+# homeassistant.components.lyvo
+clesyde-cloud-lib==0.1.0
+
 # homeassistant.components.sinch
 clx-sdk-xms==1.0.0
 
